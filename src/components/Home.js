@@ -1,4 +1,7 @@
 import styled from 'styled-components'
+import Leftside from './Leftside'
+import Main from './Main'
+import Rightside from './Rightside'
 
 const Home = (props) =>{
   return (
@@ -11,6 +14,12 @@ const Home = (props) =>{
           Find talented pros in a record time with Upwork and keep business moving.
         </p>
       </Section>
+
+      <Layout>
+        <Leftside />
+        <Main />
+        <Rightside />
+      </Layout>
     </Container>
   )
 }
@@ -53,6 +62,23 @@ const Section = styled.section`
     flex-direction: column;
     padding: 0 5px;
   }
+
+`;
+
+const Layout = styled.div`
+  display: grid;
+  grid-template-areas: "leftside main rightside";
+  grid-template-columns: minmax(0, 5fr) minmax(0, 12fr) minmax(300px, 7fr);
+  column-gap: 25px;
+  row-gap: 25px;
+  //grid-template-rows: auto;
+  margin: 25px 0;
+  @media(max-width: 768px){
+    display: flex;
+    flex-direction: column;
+    padding: 0 5px;
+  }
+
 
 `;
 
